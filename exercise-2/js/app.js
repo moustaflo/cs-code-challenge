@@ -95,16 +95,16 @@ var editTask = function () {
       if(listItem.parentNode.id === 'incomplete-tasks') {
         var incompleteTasks = JSON.parse(localStorage.getItem('incompleteItems'));
         var taskName = initialText;
-        var filteredIncompleteArray = incompleteTasks.filter(task => task !== taskName);
-        var newIncompleteArray = [...filteredIncompleteArray, this.parentNode.children[1].innerHTML];
-        localStorage.setItem('incompleteItems', JSON.stringify(newIncompleteArray));
+        var incompleteItemIndex = incompleteTasks.indexOf(taskName);
+        incompleteTasks[incompleteItemIndex] = this.parentNode.children[1].innerHTML;
+        localStorage.setItem('incompleteItems', JSON.stringify(incompleteTasks));
         location.reload();
       } else {
         var completedTasks = JSON.parse(localStorage.getItem('completeItems'));
         var completedTaskName = initialText;
-        var filteredCompleteArray = completedTasks.filter(task => task !== completedTaskName);
-        var newCompleteArray = [...filteredCompleteArray, this.parentNode.children[1].innerHTML];
-        localStorage.setItem('completeItems', JSON.stringify(newCompleteArray));
+        var completedItemIndex = completedTasks.indexOf(completedTaskName);
+        completedTasks[completedItemIndex] = this.parentNode.children[1].innerHTML;
+        localStorage.setItem('completeItems', JSON.stringify(completedTasks));
         location.reload();
       }
   } else {
