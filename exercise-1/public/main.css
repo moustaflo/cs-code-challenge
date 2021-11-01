@@ -1,0 +1,29 @@
+.usersUl {
+    list-style: none;
+    text-align: left;
+}
+
+.usersLi {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5%;
+    margin: 10px;
+    width: fit-content;
+}
+
+.detailsLink:link {
+    text-decoration: underline;
+    color: black;
+}
+
+.detailsLink:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.userDetailsContainer {
+    width:fit-content;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10%;
+}
